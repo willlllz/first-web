@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>我的第一个网站</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fc;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 80px auto;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 42px;
+      color: #2563eb;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    #message {
+      margin-top: 24px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>欢迎来到我的第一个网站！</h1>
+
+    <p>
+      这是我使用 GitHub 和 Cloudflare
+      创建的第一个网站。
+    </p>
+
+    <p>
+      我正在学习网站开发，
+      未来希望制作真正有价值的在线工具。
+    </p>
+
+    <button onclick="sayHello()">
+      点击这里
+    </button>
+
+    <p id="message"></p>
+
+  </div>
+
+  <script>
+    function sayHello() {
+      document.getElementById("message").textContent =
+        "恭喜！你的 JavaScript 功能正常运行！";
+    }
+  </script>
+</body>
+</html>
