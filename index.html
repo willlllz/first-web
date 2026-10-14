@@ -1,101 +1,44 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>我的第一个网站</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StudyFlow 是简洁易用的在线学习工作台，包含专注计时器和学习任务管理。">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>StudyFlow — 让每一次学习更专注</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fc;
-      color: #1f2937;
-    }
-
-    .container {
-      max-width: 760px;
-      margin: 80px auto;
-      padding: 40px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 42px;
-      color: #2563eb;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    button {
-      background: #2563eb;
-      color: white;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #1d4ed8;
-    }
-
-    #message {
-      margin-top: 24px;
-      font-weight: bold;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        margin: 30px auto;
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 32px;
-      }
-    }
+    :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#1d2540;background:#f7f8fc;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #9b9cf7;outline-offset:2px}header{height:74px;background:#fff;border-bottom:1px solid #e9ebf4;display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1100px)/2))}.brand{display:flex;gap:11px;align-items:center;text-decoration:none;color:#202843;font-size:21px;font-weight:800}.logo{width:37px;height:37px;border-radius:12px;background:linear-gradient(135deg,#7065f3,#4c9aef);color:#fff;display:grid;place-items:center;font-size:22px}.nav-label{font-size:13px;color:#7c859d}main{max-width:1100px;margin:0 auto;padding:50px 24px 75px}.eyebrow{font-weight:750;color:#6659d8;font-size:13px;letter-spacing:.08em;text-transform:uppercase}.hero{display:grid;grid-template-columns:1.45fr 1fr;gap:35px;align-items:center;margin-bottom:34px}.hero h1{font-size:clamp(32px,4.5vw,51px);letter-spacing:-.05em;line-height:1.17;margin:16px 0}.hero h1 span{color:#675cf0}.hero p{font-size:16px;line-height:1.85;color:#66718a;max-width:530px}.hero-art{min-height:235px;border-radius:26px;background:linear-gradient(135deg,#e7e9ff,#d9efff);position:relative;display:grid;place-items:center;overflow:hidden}.hero-art:before,.hero-art:after{content:"";position:absolute;border-radius:50%;background:#fff7;filter:blur(1px)}.hero-art:before{width:200px;height:200px;top:-110px;right:-50px}.hero-art:after{width:120px;height:120px;bottom:-55px;left:-24px}.art-card{position:relative;background:#fff;box-shadow:0 20px 55px #4b63ab26;border:1px solid #ffffffbd;border-radius:19px;padding:25px 34px;text-align:center;transform:rotate(-5deg)}.art-card .big{font-size:46px}.art-card strong{display:block;margin-top:6px}.art-card small{color:#8790a5}.section-head{display:flex;justify-content:space-between;align-items:center;margin:18px 0}.section-head h2{font-size:23px;letter-spacing:-.035em;margin:0}.section-head span{color:#818ba2;font-size:13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:#fff;border:1px solid #e9ebf4;box-shadow:0 12px 35px #253e6b09;border-radius:21px;padding:26px;min-width:0}.panel-top{display:flex;gap:12px;align-items:center}.symbol{display:grid;place-items:center;width:41px;height:41px;border-radius:12px;background:#efedff;font-size:20px}.panel h3{font-size:19px;margin:0 0 4px}.sub{color:#8a92a5;font-size:13px;margin:0}.timer{text-align:center;margin:26px 0 19px;font-size:62px;font-weight:800;letter-spacing:-.05em;font-variant-numeric:tabular-nums}.buttons{display:flex;justify-content:center;gap:10px}.btn{background:#665cf0;color:white;border:0;border-radius:11px;padding:12px 19px;font-weight:700}.btn:hover{background:#5349d7}.btn.ghost{background:#f1f2fa;color:#626b88}.btn.ghost:hover{background:#e7e8f5}.tip{text-align:center;color:#929aab;font-size:12px;margin:19px 0 0}.task-form{display:flex;gap:9px;margin:24px 0 14px}.task-form input{width:100%;min-width:0;border:1px solid #e3e7f0;border-radius:10px;padding:12px;background:#fafbfe;color:#222d48}.task-form .btn{white-space:nowrap}.task-list{list-style:none;padding:0;margin:0}.task-list li{display:flex;align-items:center;gap:9px;padding:12px 0;border-bottom:1px solid #f0f1f6}.task-list li:last-child{border:0}.task-list input{width:17px;height:17px;accent-color:#665cf0}.task-list label{flex:1;word-break:break-word;font-size:14px}.task-list li.completed label{text-decoration:line-through;color:#9ca4b5}.delete{border:0;background:transparent;color:#a2aabc;font-size:20px;padding:2px 8px}.delete:hover{color:#d95162}.progress-line{height:7px;background:#f0f1f7;border-radius:10px;overflow:hidden;margin-top:21px}.progress-fill{height:100%;background:linear-gradient(90deg,#7566f3,#4aafe4);width:0%;transition:width .2s}.progress-copy{font-size:12px;color:#8b94a9;margin-top:8px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}.feature{border:1px solid #ebedf6;background:#fff;border-radius:16px;padding:19px}.feature .emoji{font-size:25px}.feature b{display:block;margin:10px 0 6px;font-size:15px}.feature p{font-size:12px;color:#8790a5;line-height:1.6;margin:0}footer{text-align:center;color:#98a0b2;font-size:12px;padding:0 20px 32px}@media(max-width:760px){header{padding:0 19px}main{padding:36px 18px 55px}.hero,.grid{grid-template-columns:1fr}.hero-art{min-height:180px}.panel{padding:21px}.timer{font-size:55px}.features{grid-template-columns:1fr}.section-head{align-items:flex-start;gap:8px;flex-direction:column}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
-
 <body>
-  <div class="container">
-
-    <h1>welcome to study flow！</h1>
-
-    <p>
-      这是我使用 GitHub 和 Cloudflare
-      创建的第一个网站。
-    </p>
-
-    <p>
-      我正在学习网站开发，
-      未来希望制作真正有价值的在线工具。
-    </p>
-
-    <button onclick="sayHello()">
-      点击这里
-    </button>
-
-    <p id="message"></p>
-
-  </div>
-
-  <script>
-    function sayHello() {
-      document.getElementById("message").textContent =
-        "恭喜！你的 JavaScript 功能正常运行！";
-    }
-  </script>
+<header><a class="brand" href="#home"><span class="logo">✦</span>StudyFlow</a><span class="nav-label">Your personal study space</span></header>
+<main id="home">
+  <section class="hero" aria-labelledby="welcome">
+    <div><div class="eyebrow">✦ A better way to study</div><h1 id="welcome">让学习更简单，<br><span>让专注成为习惯。</span></h1><p>欢迎来到 StudyFlow。一个为学习者打造的简洁工作台，帮助你安排任务、保持专注、稳步向前。</p><a href="#tools" class="btn" style="display:inline-block;text-decoration:none;margin-top:10px">开始学习 →</a></div>
+    <div class="hero-art" aria-hidden="true"><div class="art-card"><div class="big">📚</div><strong>Make today count.</strong><small>Focus · Learn · Grow</small></div></div>
+  </section>
+  <section id="tools" aria-labelledby="tool-title"><div class="section-head"><h2 id="tool-title">今日学习工作台</h2><span>小小的进步，也值得记录</span></div>
+    <div class="grid">
+      <article class="panel"><div class="panel-top"><div class="symbol">⏱️</div><div><h3>专注计时器</h3><p class="sub">一次专注 25 分钟，一点点完成目标</p></div></div><div class="timer" id="timer" role="timer" aria-label="剩余时间">25:00</div><div class="buttons"><button id="toggleTimer" class="btn" type="button">开始专注</button><button id="resetTimer" class="btn ghost" type="button">重置</button></div><p class="tip" id="timerMessage">把注意力放在此刻最重要的一件事上。</p></article>
+      <article class="panel"><div class="panel-top"><div class="symbol">✅</div><div><h3>学习任务</h3><p class="sub">为今天安排几个可实现的小目标</p></div></div><form id="taskForm" class="task-form"><input id="newTask" maxlength="120" placeholder="例如：复习 20 个英语单词" aria-label="新的学习任务" required><button class="btn" type="submit">添加</button></form><ul id="tasks" class="task-list"></ul><div class="progress-line" aria-label="任务完成进度"><div id="progressBar" class="progress-fill"></div></div><div id="progressText" class="progress-copy">已完成 0 / 0 项任务</div></article>
+    </div>
+  </section>
+  <section aria-labelledby="explore-title" style="margin-top:40px"><div class="section-head"><h2 id="explore-title">持续进步，从这里开始</h2><span>更多学习功能将陆续加入</span></div><div class="features"><div class="feature"><div class="emoji">📝</div><b>英文写作</b><p>规划段落、改善表达。未来升级为互动写作工具。</p></div><div class="feature"><div class="emoji">🧠</div><b>词汇练习</b><p>建立属于自己的单词学习系统。</p></div><div class="feature"><div class="emoji">📈</div><b>学习成长</b><p>用清晰、简单的方式记录学习进步。</p></div></div></section>
+</main>
+<footer>© <span id="year"></span> StudyFlow · Built with curiosity and focus.</footer>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const duration=25*60;let remaining=duration,interval=null,lastTick=0;
+  const timer=document.getElementById('timer'),toggle=document.getElementById('toggleTimer');
+  function renderTimer(){const m=String(Math.floor(remaining/60)).padStart(2,'0'),s=String(remaining%60).padStart(2,'0');timer.textContent=`${m}:${s}`;document.title=`${m}:${s} · StudyFlow`}
+  function stopTimer(){if(interval!==null){clearInterval(interval);interval=null}toggle.textContent='继续专注'}
+  function tick(){const now=Date.now(),elapsed=Math.floor((now-lastTick)/1000);if(elapsed<1)return;remaining=Math.max(0,remaining-elapsed);lastTick+=elapsed*1000;renderTimer();if(remaining===0){stopTimer();toggle.textContent='重新开始';document.getElementById('timerMessage').textContent='🎉 完成一次专注！起来休息一下吧。'}}
+  toggle.addEventListener('click',()=>{if(interval!==null){tick();stopTimer();return}if(remaining===0)remaining=duration;lastTick=Date.now();interval=setInterval(tick,250);toggle.textContent='暂停';document.getElementById('timerMessage').textContent='正在专注中，加油！';renderTimer()});
+  document.getElementById('resetTimer').addEventListener('click',()=>{stopTimer();remaining=duration;toggle.textContent='开始专注';document.getElementById('timerMessage').textContent='把注意力放在此刻最重要的一件事上。';renderTimer()});renderTimer();
+  const key='studyflow.tasks.v1';let tasks=[];try{const saved=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(saved))tasks=saved.filter(t=>t&&typeof t.title==='string'&&typeof t.done==='boolean').slice(0,100)}catch(e){}
+  const list=document.getElementById('tasks');function save(){try{localStorage.setItem(key,JSON.stringify(tasks))}catch(e){}}
+  function renderTasks(){list.replaceChildren();if(tasks.length===0){const empty=document.createElement('li');empty.style.color='#9ba3b6';empty.style.fontSize='13px';empty.textContent='还没有任务，添加今天的第一个小目标吧。';list.appendChild(empty)}tasks.forEach(t=>{const li=document.createElement('li');if(t.done)li.className='completed';const check=document.createElement('input');check.type='checkbox';check.checked=t.done;check.setAttribute('aria-label','完成任务：'+t.title);check.addEventListener('change',()=>{t.done=check.checked;save();renderTasks()});const label=document.createElement('label');label.textContent=t.title;const del=document.createElement('button');del.className='delete';del.type='button';del.textContent='×';del.setAttribute('aria-label','删除任务：'+t.title);del.addEventListener('click',()=>{tasks=tasks.filter(x=>x!==t);save();renderTasks()});li.append(check,label,del);list.appendChild(li)});const count=tasks.filter(t=>t.done).length;document.getElementById('progressText').textContent=`已完成 ${count} / ${tasks.length} 项任务`;document.getElementById('progressBar').style.width=(tasks.length?count/tasks.length*100:0)+'%'}
+  document.getElementById('taskForm').addEventListener('submit',e=>{e.preventDefault();const field=document.getElementById('newTask'),title=field.value.trim();if(!title)return;if(tasks.length>=100){alert('最多保存 100 项任务，请先清理已完成任务。');return}tasks.push({title,done:false});field.value='';save();renderTasks();field.focus()});renderTasks();
+</script>
 </body>
 </html>
